@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+	<link rel="icon" href="./Resc_files/resc-logo.ico" sizes="32x32"><link rel="icon" href="./Resc_files/resc-logo.ico" sizes="192x192">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .form-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #2a3f5d;
+        }
+        
+        .form-header p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .form-section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2a3f5d;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -10px 15px;
+        }
+        
+        .form-group {
+            flex: 1 0 calc(50% - 20px);
+            margin: 0 10px 15px;
+            min-width: 200px;
+        }
+        
+        .form-group.full-width {
+            flex: 1 0 calc(100% - 20px);
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        input[type="file"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            transition: border-color 0.2s;
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+        
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        
+        .required-field::after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        .submit-btn {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
+        }
+        
+        .submit-btn:hover {
+            background-color: #3a7bc8;
+        }
+        
+        .submit-btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        
+        .form-footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .file-input-container {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .file-input-button {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 8px 12px;
+            background-color: #f9f9f9;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .file-input-button:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .file-input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+        
+        .file-name {
+            margin-left: 10px;
+            font-size: 13px;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-grow: 1;
+            text-align: right;
+        }
+        
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            color: #2e7d32;
+        }
+        
+        @media (max-width: 600px) {
+            .form-group {
+                flex: 1 0 calc(100% - 20px);
+            }
+            
+            .form-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+ <form action="https://formspree.io/f/xyzwewpn" method="POST" enctype="multipart/form-data">
+    <label for="pdf">Attach PDF File *</label>
+    <input type="file" id="pdf" name="pdf" accept=".pdf" required>
+    <button type="submit">Submit</button>
+</form>
+
+    <div class="form-container">
+        <div class="success-message" id="success-message">
+            <h3>Thank you for your application!</h3>
+            <p>We have received your information and will review it shortly.</p>
+            <p>A confirmation email has been sent to your provided email address.</p>
+        </div>
+        
+        <div id="form-content">
+            <div class="form-header">
+                <h1>Job Application Form</h1>
+                <p>Please fill out all required fields to submit your application</p>
+            </div>
+            
+            <form id="application-form">
+                <div class="form-section">
+                    <div class="section-title">Personal Information</div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name" class="required-field">First Name</label>
+                            <input type="text" id="first-name" name="first_name" required>
+                            <div class="error-message" id="first-name-error">Please enter your first name</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last-name" class="required-field">Last Name</label>
+                            <input type="text" id="last-name" name="last_name" required>
+                            <div class="error-message" id="last-name-error">Please enter your last name</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="required-field">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error">Please enter a valid email address</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{10,15}">
+                            <div class="error-message" id="phone-error">Please enter a valid phone number (10-15 digits)</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <div class="section-title">Professional Information</div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="position" class="required-field">Position Applied For</label>
+                            <input type="text" id="position" name="position" required>
+                            <div class="error-message" id="position-error">Please specify the position you're applying for</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="source">How did you hear about us?</label>
+                            <select id="source" name="source">
+                                <option value="">Select an option</option>
+                                <option value="LinkedIn">LinkedIn</option>
+                                <option value="Job Board">Job Board</option>
+                                <option value="Referral">Referral</option>
+                                <option value="Company Website">Company Website</option>
+                                <option value="Social Media">Social Media</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="salary">Expected Salary</label>
+                            <input type="text" id="salary" name="salary" placeholder="e.g. $50,000">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="availability">Availability</label>
+                            <select id="availability" name="availability">
+                                <option value="">Select availability</option>
+                                <option value="Immediately">Immediately</option>
+                                <option value="1-2 weeks">1-2 weeks</option>
+                                <option value="1 month">1 month</option>
+                                <option value="2+ months">2+ months</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="experience">Relevant Experience</label>
+                        <textarea id="experience" name="experience" placeholder="Describe your relevant experience and skills"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <div class="section-title">Attachments</div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="resume" class="required-field">Resume/CV</label>
+                            <div class="file-input-container">
+                                <div class="file-input-button">
+                                    <span>Choose File</span>
+                                    <span class="file-name" id="resume-file-name">No file chosen</span>
+                                </div>
+                                <input type="file" id="resume" name="resume" class="file-input" accept=".pdf,.doc,.docx" required>
+                            </div>
+                            <div class="error-message" id="resume-error">Please upload your resume (PDF or DOC)</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cover-letter">Cover Letter</label>
+                            <div class="file-input-container">
+                                <div class="file-input-button">
+                                    <span>Choose File</span>
+                                    <span class="file-name" id="cover-letter-file-name">No file chosen</span>
+                                </div>
+                                <input type="file" id="cover-letter" name="cover_letter" class="file-input" accept=".pdf,.doc,.docx">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group full-width">
+                        <label for="portfolio">Portfolio/Website Link</label>
+                        <input type="url" id="portfolio" name="portfolio" placeholder="https://">
+                        <div class="error-message" id="portfolio-error">Please enter a valid URL (including https://)</div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <div class="section-title">Additional Information</div>
+                    
+                    <div class="form-group full-width">
+                        <label for="comments">Anything else you'd like us to know?</label>
+                        <textarea id="comments" name="comments" placeholder="Optional additional information"></textarea>
+                    </div>
+                </div>
+                
+                <div class="form-footer">
+                    <button type="submit" class="submit-btn" id="submit-btn">Submit Application</button>
+                    <p>All fields marked with * are required</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Form elements
+            const form = document.getElementById('application-form');
+            const submitBtn = document.getElementById('submit-btn');
+            const formContent = document.getElementById('form-content');
+            const successMessage = document.getElementById('success-message');
+            
+            // File input handlers
+            document.getElementById('resume').addEventListener('change', function(e) {
+                const fileName = e.target.files.length ? e.target.files[0].name : 'No file chosen';
+                document.getElementById('resume-file-name').textContent = fileName;
+            });
+            
+            document.getElementById('cover-letter').addEventListener('change', function(e) {
+                const fileName = e.target.files.length ? e.target.files[0].name : 'No file chosen';
+                document.getElementById('cover-letter-file-name').textContent = fileName;
+            });
+            
+            // Form validation
+            function validateField(field, errorId, validationFn) {
+                const errorElement = document.getElementById(errorId);
+                const isValid = validationFn(field.value);
+                
+                if (!isValid) {
+                    errorElement.style.display = 'block';
+                    field.classList.add('error');
+                    return false;
+                } else {
+                    errorElement.style.display = 'none';
+                    field.classList.remove('error');
+                    return true;
+                }
+            }
+            
+            // Validation functions
+            function validateRequired(value) {
+                return value.trim() !== '';
+            }
+            
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+            
+            function validatePhone(phone) {
+                if (!phone) return true; // optional field
+                const re = /^[0-9]{10,15}$/;
+                return re.test(phone);
+            }
+            
+            function validateUrl(url) {
+                if (!url) return true; // optional field
+                try {
+                    new URL(url);
+                    return true;
+                } catch {
+                    return false;
+                }
+            }
+            
+            function validateFile(fileInput) {
+                if (!fileInput.files || fileInput.files.length === 0) {
+                    return false;
+                }
+                
+                const file = fileInput.files[0];
+                const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                return validTypes.includes(file.type) || file.name.match(/\.(pdf|doc|docx)$/i);
+            }
+            
+            // Field validation on blur
+            document.getElementById('first-name').addEventListener('blur', function() {
+                validateField(this, 'first-name-error', validateRequired);
+            });
+            
+            document.getElementById('last-name').addEventListener('blur', function() {
+                validateField(this, 'last-name-error', validateRequired);
+            });
+            
+            document.getElementById('email').addEventListener('blur', function() {
+                validateField(this, 'email-error', function(value) {
+                    return validateRequired(value) && validateEmail(value);
+                });
+            });
+            
+            document.getElementById('phone').addEventListener('blur', function() {
+                validateField(this, 'phone-error', validatePhone);
+            });
+            
+            document.getElementById('position').addEventListener('blur', function() {
+                validateField(this, 'position-error', validateRequired);
+            });
+            
+            document.getElementById('portfolio').addEventListener('blur', function() {
+                validateField(this, 'portfolio-error', validateUrl);
+            });
+            
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate all fields
+                const isFirstNameValid = validateField(document.getElementById('first-name'), 'first-name-error', validateRequired);
+                const isLastNameValid = validateField(document.getElementById('last-name'), 'last-name-error', validateRequired);
+                const isEmailValid = validateField(document.getElementById('email'), 'email-error', function(value) {
+                    return validateRequired(value) && validateEmail(value);
+                });
+                const isPhoneValid = validateField(document.getElementById('phone'), 'phone-error', validatePhone);
+                const isPositionValid = validateField(document.getElementById('position'), 'position-error', validateRequired);
+                const isResumeValid = validateFile(document.getElementById('resume'));
+                const isPortfolioValid = validateField(document.getElementById('portfolio'), 'portfolio-error', validateUrl);
+                
+                // Show resume error if invalid
+                const resumeError = document.getElementById('resume-error');
+                if (!isResumeValid) {
+                    resumeError.style.display = 'block';
+                } else {
+                    resumeError.style.display = 'none';
+                }
+                
+                // If all valid, submit the form
+                if (isFirstNameValid && isLastNameValid && isEmailValid && isPhoneValid && 
+                    isPositionValid && isResumeValid && isPortfolioValid) {
+                    
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Submitting...';
+                    
+                    // Simulate form submission (replace with actual AJAX call)
+                    setTimeout(function() {
+                        // Hide form and show success message
+                        formContent.style.display = 'none';
+                        successMessage.style.display = 'block';
+                        
+                        // In a real application, you would submit the form data to your server here
+                        // For example:
+                        /*
+                        const formData = new FormData(form);
+                        fetch('/submit-application', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                formContent.style.display = 'none';
+                                successMessage.style.display = 'block';
+                            } else {
+                                alert('There was an error submitting your application.');
+                                submitBtn.disabled = false;
+                                submitBtn.textContent = 'Submit Application';
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('There was an error submitting your application.');
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Submit Application';
+                        });
+                        */
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

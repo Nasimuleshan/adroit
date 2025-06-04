@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Form</title><link rel="icon" href="./Resc_files/resc-logo.ico" sizes="32x32"><link rel="icon" href="./Resc_files/resc-logo.ico" sizes="192x192">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        .container { max-width: 600px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); margin: auto; }
+        h2 { color: #333; margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-top: 15px; text-align: left; }
+        input, textarea, select { width: 100%; padding: 10px; margin-top: 5px; border-radius: 5px; border: 1px solid #ccc; }
+        button { margin-top: 20px; padding: 12px; background-color: #007bff; color: white; border: none; cursor: pointer; border-radius: 5px; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        .info-box { background: #007bff; color: white; padding: 10px; border-radius: 5px; margin-top: 20px; }
+        a { color: white; text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Right to Erasure or Restrict Processing</h2>
+       <form action="https://formspree.io/f/xyzwewpn" method="POST">
+
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email Address *</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="right">Select Your Right *</label>
+            <select id="right" name="right">
+                <option value="erasure">Right to Erasure</option>
+                <option value="restrict_processing">Right to Restrict Processing</option>
+            </select>
+
+            <div class="info-box">
+                <p><strong>Right to Erasure:</strong> I request that you erase my data according to the UK GDPR. 
+                <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-erasure/#:~:text=Under%20Article%2017%20of%20the,be%20created%20in%20the%20future." target="_blank">Learn More</a></p>
+
+                <p><strong>Right to Restrict Processing:</strong> I request that you restrict processing of my data according to the UK GDPR. 
+                <a href="https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-restrict-processing/#:~:text=individual%20for%20ID%3F-,What%20is%20the%20right%20to%20restrict%20processing%3F,an%20organisation%20uses%20their%20data" target="_blank">Learn More</a></p>
+            </div>
+
+            <label for="context">In what context did you provide your data? *</label>
+            <textarea id="context" name="context" rows="3" required></textarea>
+
+            <label for="details">Additional Information (Optional)</label>
+            <textarea id="details" name="details" rows="4"></textarea>
+
+            <h3>Endorsement Details</h3>
+
+            <label for="endorser_name">Endorser Name</label>
+            <input type="text" id="endorser_name" name="endorser_name">
+
+            <label for="endorser_email">Endorser Email</label>
+            <input type="email" id="endorser_email" name="endorser_email">
+
+            <label for="endorsement_reason">Reason for Endorsement</label>
+            <textarea id="endorsement_reason" name="endorsement_reason" rows="4"></textarea>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+</html>
