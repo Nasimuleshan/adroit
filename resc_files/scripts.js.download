@@ -1,0 +1,15 @@
+/* ======================================================================
+     JS Scripts for Research Consulting
+  ======================================================================
+*/
+
+/* Add _blank to a links in further reading block */
+jQuery(document).ready(function ($) {
+  // $('a').each(function(index) {
+  //     var link = $(this).attr("href");
+  //     if(link.substring(0,7) == "http://")
+  //         $(this).attr("target", "_blank");
+  // });
+
+$('.further-reading a').attr('target', '_blank');
+});
