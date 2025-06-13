@@ -389,7 +389,6 @@ img.litespeed-loaded {
 
 .categories-menu .elementor-menu-toggle:before {
     content: 'Categories';
-    font-family: 'Inter',sans-serif;
     font-weight: 700;
     font-size: 1em;
     margin: 0 1em 0 0
