@@ -63,7 +63,7 @@
 }
 
 .elementor-5184 .elementor-element.elementor-element-21c4d95>.elementor-background-overlay {
-    background-image: url("https://www.research-consulting.com/wp-content/uploads/2021/07/Wave-bg-1.jpg.webp");
+   
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -514,7 +514,7 @@
 
 @media(max-width: 767px) {
     .elementor-5184 .elementor-element.elementor-element-5d6344f>.elementor-container {
-        min-height:300px
+        min-height:400px
     }
 
     .elementor-5184 .elementor-element.elementor-element-054df42>.elementor-element-populated {
