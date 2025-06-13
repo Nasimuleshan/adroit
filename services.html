@@ -16,9 +16,14 @@
 
 
     <style>
-	   .container { 
-  width: 100%; 
-  max-width: 1200px; /* Optional: Limits expansion on large screens */
+	   /* Base styles (mobile) */
+.body { font-size: 16px; }
+.container { padding: 10px; }
+
+/* Tablet & Desktop adjustments */
+.@media (min-width: 768px) {
+  .body { font-size: 18px; }
+  .container { padding: 20px; }
 }
 
         .fa-arrow-left {
