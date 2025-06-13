@@ -97,7 +97,8 @@
 
 .elementor-34 .elementor-element.elementor-element-031d597 .elementor-nav-menu--dropdown .elementor-item,.elementor-34 .elementor-element.elementor-element-031d597 .elementor-nav-menu--dropdown .elementor-sub-item {
     font-family: "Inter",Sans-serif;
-    font-weight: 700
+    font-weight: 700; 
+    width: max-content;
 }
 
 .elementor-34 .elementor-element.elementor-element-031d597 .elementor-nav-menu--main .elementor-nav-menu--dropdown,.elementor-34 .elementor-element.elementor-element-031d597 .elementor-nav-menu__container.elementor-nav-menu--dropdown {
