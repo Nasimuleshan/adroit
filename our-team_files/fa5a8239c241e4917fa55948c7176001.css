@@ -48,7 +48,7 @@
 .eicon-editor-external-link:before {
     content: "\e802"
 }
-
+.elementor a {width: max-content;}
 .eicon-editor-close:before {
     content: "\e803"
 }
