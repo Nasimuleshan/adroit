@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <ul id="menu-1-031d597" class="elementor-nav-menu" data-smartmenus-id="17415734225721985">
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
                     <a href="./index.html">
-<img width="150" height="47" src="./about_files/resc-logo.svg" class="attachment-full size-full wp-image-7776">								</a>
+<img width="150" height="47" src="./resc_files/resc-logo.jpg" class="attachment-full size-full wp-image-7776">								</a>
                 </li>
 				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
                     <a href="./index.html" class="elementor-item">Home</a>
