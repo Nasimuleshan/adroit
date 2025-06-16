@@ -27,16 +27,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Desktop Menu
     const desktopNav = document.getElementById('navbar-desktop');
-	
-	
-<div class="elementor-widget-wrap elementor-element-populated"><div class="elementor-element elementor-element-031d597 elementor-nav-menu__align-justify elementor-nav-menu--stretch main-nav elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="031d597" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
-
-<div class="elementor-widget-container">
-    <!-- Desktop Navigation -->
-    <nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-none">
  if (desktopNav) {
         desktopNav.innerHTML = `
             <ul id="menu-1-031d597" class="elementor-nav-menu" data-smartmenus-id="17415734225721985">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
+                    <a href="./index.html">
+<img width="150" height="47" src="./resc_files/resc-logo.jpg" class="attachment-full size-full wp-image-7776">								</a>
+                </li>
 				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
                     <a href="./index.html" class="elementor-item">Home</a>
                 </li>
@@ -62,15 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setActiveMenuItem();
     }
 
-    </nav>
-    <!-- Mobile Toggle -->
-    <div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
-        <i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close fa-solid fa-x"></i>
-        <i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open fa-solid fa-bars"></i>
-    </div>
 
-    <!-- Mobile Navigation -->
-    <nav class="elementor-nav-menu--dropdown elementor-nav-menu__container element-style" aria-hidden="true">
 
 
     // Mobile Menu (if you have one)
@@ -102,12 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set active menu item for mobile
         setActiveMenuItem();
     }
-    </nav>
-</div>
-
-<!-- Load script with defer for optimal performance -->
-<script src="navbar.js" defer></script>
-</div></div>
-   
+ 
 
 });
