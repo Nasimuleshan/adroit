@@ -131,7 +131,7 @@ function createUniversalFooter() {
   copyrightSection.className = 'footer-copyright';
   
   const copyrightText = document.createElement('p');
-  copyrightText.innerHTML = '&copy; workUnwind Limited 2025.';
+  copyrightText.innerHTML = '&copy; adroitconsultations Limited 2025.';
   
   copyrightSection.appendChild(copyrightText);
   
