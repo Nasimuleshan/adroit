@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="./Projects.html" class="elementor-item">Projects</a>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-                    <!-- Empty item -->
+                    <a href="./our-team.html" class="elementor-item">Our Team</a>
                 </li>
             </ul>
         `;
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="./Projects.html" class="elementor-item">Projects</a>
                 </li>
                 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-                    <!-- Empty item -->
+                   <a href="./our-team.html" class="elementor-item">Our Team</a>
                 </li>
             </ul>
         `;
