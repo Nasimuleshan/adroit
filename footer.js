@@ -27,8 +27,8 @@ function createUniversalFooter() {
   const emailItem = document.createElement('li');
   const emailLink = document.createElement('a');
   emailLink.className = 'footer-links a';
-  emailLink.href = 'mailto:workunwind2025@gmail.com';
-  emailLink.innerHTML = '<i class="fas fa-envelope"></i> workunwind2025@gmail.com';
+  emailLink.href = 'mailto:info@adroitconsultations.com';
+  emailLink.innerHTML = '<i class="fas fa-envelope"></i> info@adroitconsultations.com';
   emailItem.appendChild(emailLink);
   
   contactList.appendChild(phoneItem);
