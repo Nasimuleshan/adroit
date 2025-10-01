@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="./our-team.html" class="elementor-item">Our Team</a>
                 </li>
 				 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-                    <a href="./Contact-Us.html" class="elementor-item">Our Team</a>
+                    <a href="./Contact-Us.html" class="elementor-item">Contact Us</a>
                 </li>
             </ul>
         `;
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </li>
 
 				<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-42">
-                   <a href="./Contact-Us.html" class="elementor-item">Our Team</a>
+                   <a href="./Contact-Us.html" class="elementor-item">Contact Us</a>
                 </li>
             </ul>
         `;
@@ -97,4 +97,5 @@ document.addEventListener('DOMContentLoaded', function() {
  
 
 });
+
 
