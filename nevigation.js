@@ -82,6 +82,18 @@ class DynamicMenu {
                     ],
                     aClasses: ["elementor-item", "elementor-item-active"]
                 },
+
+				 {
+                    href: "./Contact-Us.html",
+                    text: "Contact Us",
+                    liClasses: [
+                        "menu-item",
+                        "menu-item-type-post_type",
+                        "menu-item-object-page",
+                        "menu-item-42"
+                    ],
+                    aClasses: ["elementor-item", "elementor-item-active"]
+                },
                 {
                     // Empty menu item
                     liClasses: [
@@ -133,4 +145,5 @@ class DynamicMenu {
 document.addEventListener('DOMContentLoaded', () => {
     const menu = new DynamicMenu('nevigation');
     menu.createMenu();
+
 });
